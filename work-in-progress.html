@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work-in-progress - Stallion OneByte Digital Intelligence</title>
+  <meta name="description"
+    content="Stallion OneByte Work-in-Progress (WIP) Traceability - Shopfloor IoT, conveyor RFID quality gates, real-time OEE dashboards, and PLC integration." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Tailwind CSS v4 Browser Compiler & Stylesheet -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="src/index.css" />
+</head>
+
+<body class="bg-[#f8f9fa] text-[#191c1d] min-h-screen flex flex-col" data-sim-type="wip">
+  <!-- NAVIGATION BAR -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-14 flex items-center justify-between">
+      <!-- Brand Logo & Name -->
+      <a href="index.html" class="flex items-center gap-2.5 text-decoration-none group">
+        <img src="images/logo.png" alt="Stallion OneByte Logo"
+          class="h-8 w-auto object-contain transition-transform group-hover:scale-105" />
+        <div class="flex items-center gap-1.5">
+          <span class="font-headline font-bold text-lg text-[#001945] tracking-tight">
+            Stallion Software Hub
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+        <a href="index.html#home"
+          class="text-xs font-semibold text-slate-600 hover:text-[#003c90] transition-colors text-decoration-none">
+          Home
+        </a>
+        <a href="index.html#about"
+          class="text-xs font-semibold text-slate-600 hover:text-[#003c90] transition-colors text-decoration-none">
+          About
+        </a>
+        <a href="index.html#vision-mission"
+          class="text-xs font-semibold text-slate-600 hover:text-[#003c90] transition-colors text-decoration-none">
+          Vision &amp; Mission
+        </a>
+        <a href="index.html#solutions"
+          class="text-xs font-semibold text-[#003c90] transition-colors text-decoration-none">
+          Solutions
+        </a>
+        <a href="#contact"
+          class="text-xs font-semibold text-slate-600 hover:text-[#003c90] transition-colors text-decoration-none">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobile-menu-btn" type="button"
+        class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+        aria-label="Toggle Navigation">
+        <span class="material-symbols-outlined fs-5">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Drawer -->
+    <div id="mobile-menu-drawer"
+      class="md:hidden hidden bg-white border-b border-slate-200 px-4 py-3 space-y-2 shadow-lg">
+      <a href="index.html#home"
+        class="block text-sm font-semibold text-slate-700 hover:text-[#003c90] text-decoration-none py-1">
+        Home
+      </a>
+      <a href="index.html#about"
+        class="block text-sm font-semibold text-slate-700 hover:text-[#003c90] text-decoration-none py-1">
+        About
+      </a>
+      <a href="index.html#vision-mission"
+        class="block text-sm font-semibold text-slate-700 hover:text-[#003c90] text-decoration-none py-1">
+        Vision &amp; Mission
+      </a>
+      <a href="index.html#solutions" class="block text-sm font-semibold text-[#003c90] text-decoration-none py-1">
+        Solutions
+      </a>
+      <a href="#contact"
+        class="block text-sm font-semibold text-slate-700 hover:text-[#003c90] text-decoration-none py-1">
+        Contact
+      </a>
+      <div class="pt-2 border-t border-slate-100">
+        <button type="button" data-open-demo="work-in-progress"
+          class="w-full btn-primary text-white py-2 text-center text-xs font-bold rounded-lg">
+          Request Demo
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow pt-14">
+    <!-- BREADCRUMBS -->
+    <div class="bg-white border-b border-slate-200/70 py-2.5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center gap-2 text-xs text-slate-500 font-mono-tech">
+        <a href="index.html" class="hover:text-[#003c90] text-decoration-none flex items-center gap-1">
+          <span class="material-symbols-outlined fs-6">home</span>
+          <span>Home</span>
+        </a>
+        <span>/</span>
+        <a href="index.html#solutions" class="hover:text-[#003c90] text-decoration-none">
+          Solutions
+        </a>
+        <span>/</span>
+        <span class="text-[#003c90] font-bold">Work-in-progress</span>
+      </div>
+    </div>
+
+    <!-- PRODUCT HERO SECTION -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-b from-[#f3f4f5] via-[#f8f9fa] to-white border-b border-slate-200/70 pt-8 sm:pt-12 pb-10 sm:pb-14">
+      <div class="absolute inset-0 opacity-15 pointer-events-none mix-blend-multiply overflow-hidden">
+        <img src="images/mesh-bg.png" alt="Mesh Pattern" class="w-full h-full object-cover scale-105" />
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <!-- Left Column: Copy & CTAs -->
+          <div class="lg:col-span-7 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60">
+              <span class="w-2 h-2 rounded-full bg-[#003c90] animate-pulse"></span>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+                Manufacturing &amp; Shopfloor IoT
+              </span>
+            </div>
+
+            <h1
+              class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#001945] tracking-tight leading-tight">
+              Optimize Shopfloors with <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-[#0f52ba] to-[#00b4d8]">Work-in-Progress.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-[#434653] font-medium leading-relaxed">
+              Manage unfinished items in a production process or supply chain with real-time traceability.
+            </p>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Stallion WIP Traceability gives plant managers microsecond-level insight into shopfloor operations. By
+              tagging carriers, jigs, and work-orders with ruggedized RFID and Barcode telemetry, manufacturing
+              facilities uncover bottlenecks and eliminate scrap before defects leave the line.
+            </p>
+
+            <!-- Highlights Tags -->
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
+                <span class="material-symbols-outlined text-emerald-600 text-sm">check_circle</span>
+                Bottleneck Elimination
+              </span>
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
+                <span class="material-symbols-outlined text-emerald-600 text-sm">check_circle</span>
+                Real-Time OEE Metrics
+              </span>
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs">
+                <span class="material-symbols-outlined text-emerald-600 text-sm">check_circle</span>
+                Automated Quality Gates
+              </span>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="flex flex-wrap gap-3 pt-3">
+              <button type="button" data-open-demo="work-in-progress"
+                class="btn-primary text-white font-bold text-sm px-6 py-3 rounded-lg shadow-lg flex items-center gap-2 cursor-pointer">
+                <span>Request Live Demo</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
+              <a href="#contact"
+                class="bg-white hover:bg-slate-50 text-[#001945] font-semibold text-sm px-6 py-3 rounded-lg border border-slate-300 shadow-2xs transition-colors cursor-pointer text-decoration-none">
+                Contact Specialist
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual with Floating Badges -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
+              <img src="images/work-in-progress.jpg" alt="Work in Progress Shopfloor Automation"
+                class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none">
+              </div>
+
+              <!-- Floating Metric 1 -->
+              <div
+                class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-cyan-600 fs-6">precision_manufacturing</span>
+                  <span class="text-xs font-bold text-[#001945]">-42% Cycle Latency</span>
+                </div>
+                <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Stage-wise Traceability</span>
+              </div>
+
+              <!-- Floating Metric 2 -->
+              <div
+                class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-emerald-600 fs-6">tune</span>
+                  <span class="text-xs font-bold text-[#001945]">Sub-second Sync</span>
+                </div>
+                <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Conveyor RFID Sensors</span>
+              </div>
+
+              <!-- Live Tag -->
+              <div
+                class="absolute bottom-4 right-4 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] text-cyan-300 font-mono-tech border border-cyan-500/30 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+                <span>Smart Production Line • Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE EDGE SIMULATOR SECTION -->
+    <section class="py-8 sm:py-10 bg-white border-b border-slate-200/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="text-center mb-6">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+            Interactive Test Console
+          </span>
+          <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-[#001945] tracking-tight mt-1">
+            Live Edge Simulator: Shopfloor Gate Sensor
+          </h2>
+          <p class="text-sm text-slate-600 max-w-xl mx-auto mt-1">
+            Trigger conveyor station RFID antennas to verify sub-assembly cycle times and quality clearance.
+          </p>
+        </div>
+
+        <div
+          class="max-w-4xl mx-auto bg-slate-900 text-slate-100 p-5 rounded-2xl font-mono border border-slate-800 shadow-xl">
+          <div class="flex justify-between items-center pb-3 border-b border-slate-800">
+            <div class="flex items-center gap-2">
+              <span class="inline-block rounded-full bg-emerald-400 w-2.5 h-2.5 animate-pulse"></span>
+              <span class="text-xs text-emerald-400 font-bold">
+                EDGE SIMULATOR: CONVEYOR GATE TELEMETRY
+              </span>
+            </div>
+            <span class="text-xs text-slate-400">PLC Modbus / PROFINET Gateway</span>
+          </div>
+
+          <div class="py-4">
+            <div id="sim-feed" class="p-3 bg-black/60 rounded-xl text-xs space-y-2 font-mono"
+              style="min-height: 120px; max-height: 180px; overflow-y: auto;">
+              <div class="text-cyan-300 font-semibold">[Connected] Industrial PLC interface online. Ready for station
+                gate trigger.</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap justify-between items-center gap-3 pt-3 border-t border-slate-800">
+            <button id="sim-trigger-btn" type="button"
+              class="btn-primary text-white text-xs font-bold px-4 py-2.5 rounded-lg flex items-center gap-2 cursor-pointer">
+              <span class="material-symbols-outlined text-sm">sensors</span>
+              <span>Trigger Station Quality Gate</span>
+            </button>
+            <span class="text-[11px] text-slate-400 font-mono-tech">
+              OPC-UA interlock verification active
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES & BENEFITS SECTION -->
+    <section class="py-10 sm:py-12 bg-[#f8f9fa] border-b border-slate-200/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+            Core Capabilities
+          </span>
+          <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-[#001945] tracking-tight mt-1">
+            Enterprise Capabilities &amp; Value
+          </h2>
+          <p class="text-sm text-slate-600 max-w-2xl mx-auto mt-1">
+            Uncover bottlenecks, enforce strict step sequencing, and optimize Overall Equipment Effectiveness (OEE).
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+          <div class="p-5 bg-white border border-slate-200 rounded-2xl shadow-xs hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#003c90] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined fs-5">speed</span>
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-base text-[#001945] mb-1">
+                  Instant Bottleneck &amp; Takt Detection
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-0">
+                  Real-time alerting whenever an assembly or testing station exceeds standard takt time, enabling
+                  dynamic rebalancing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 bg-white border border-slate-200 rounded-2xl shadow-xs hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-50 text-[#004757] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined fs-5">lock</span>
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-base text-[#001945] mb-1">
+                  Interlocked Sequence Gates
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-0">
+                  Prevent out-of-sequence production steps using hardware-interlocked conveyor sensor gates that halt
+                  skips.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 bg-white border border-slate-200 rounded-2xl shadow-xs hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined fs-5">history_edu</span>
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-base text-[#001945] mb-1">
+                  Complete Pedigree History
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-0">
+                  Trace every component batch, tool calibration, and operator badge ID used in finished serialization
+                  for defect containment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 bg-white border border-slate-200 rounded-2xl shadow-xs hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined fs-5">monitoring</span>
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-base text-[#001945] mb-1">
+                  Live OEE &amp; Scrap Dashboards
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-0">
+                  Real-time Overall Equipment Effectiveness (Availability, Performance, Quality) dashboards with
+                  automated scrap logging.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROTOCOLS & ARCHITECTURE SPECIFICATIONS -->
+    <section class="py-10 sm:py-12 bg-white border-b border-slate-200/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-6">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+              Architecture Specs
+            </span>
+            <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-[#001945] tracking-tight mt-1">
+              Hardware &amp; Protocol Integration
+            </h2>
+          </div>
+
+          <div class="bg-[#f8f9fa] border border-slate-200 rounded-2xl p-6 space-y-3 font-mono-tech text-xs sm:text-sm">
+            <div class="flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-200/80">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#003c90] mt-1 shrink-0"></span>
+              <span class="text-slate-800">Industrial IP67-rated UHF RFID tunnel antennas and optical vision
+                sensors</span>
+            </div>
+            <div class="flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-200/80">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#003c90] mt-1 shrink-0"></span>
+              <span class="text-slate-800">Direct interface with PLC systems via OPC-UA, Modbus TCP, and PROFINET
+                standards</span>
+            </div>
+            <div class="flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-200/80">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#003c90] mt-1 shrink-0"></span>
+              <span class="text-slate-800">Work-order routing engine with dynamic re-routing around downed assembly
+                lines</span>
+            </div>
+            <div class="flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-200/80">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#003c90] mt-1 shrink-0"></span>
+              <span class="text-slate-800">Statistical Process Control (SPC) charting with automated upper/lower
+                tolerance alerts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED SOLUTIONS (OTHER 5 PRODUCTS) -->
+    <section class="py-10 sm:py-12 bg-[#f3f4f5]/60 border-b border-slate-200/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+              Ecosystem Suite
+            </span>
+            <h2 class="font-headline text-2xl font-extrabold text-[#001945] tracking-tight">
+              Explore Related Solutions
+            </h2>
+          </div>
+          <a href="index.html#solutions"
+            class="text-xs font-bold text-[#003c90] hover:underline flex items-center gap-1">
+            <span>View All Solutions</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Asset Management -->
+          <a href="asset-management.html"
+            class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all group flex flex-col text-decoration-none">
+            <div class="h-40 bg-slate-900 relative overflow-hidden">
+              <img src="images/asset-management.jpg" alt="Asset Management"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-white/20 backdrop-blur-md p-1.5 rounded-lg border border-white/20 text-white">
+                <span class="material-symbols-outlined fs-6">inventory_2</span>
+              </div>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h4
+                  class="font-headline font-bold text-base text-[#001945] group-hover:text-[#003c90] transition-colors mb-1">
+                  Asset Management
+                </h4>
+                <p class="text-xs text-slate-600 line-clamp-2 mb-3">
+                  Lifecycle tracking, automated depreciation, and RFID physical audits.
+                </p>
+              </div>
+              <span
+                class="text-xs font-semibold text-[#003c90] flex items-center gap-1 group-hover:gap-2 transition-all">
+                <span>Explore Solution</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- Warehouse Management -->
+          <a href="warehouse-management.html"
+            class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all group flex flex-col text-decoration-none">
+            <div class="h-40 bg-slate-900 relative overflow-hidden">
+              <img src="images/warehouse-management.jpg" alt="Warehouse Management"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-white/20 backdrop-blur-md p-1.5 rounded-lg border border-white/20 text-white">
+                <span class="material-symbols-outlined fs-6">warehouse</span>
+              </div>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h4
+                  class="font-headline font-bold text-base text-[#001945] group-hover:text-[#003c90] transition-colors mb-1">
+                  Warehouse Management
+                </h4>
+                <p class="text-xs text-slate-600 line-clamp-2 mb-3">
+                  Control storage, picking, dispatching, and bin movements.
+                </p>
+              </div>
+              <span
+                class="text-xs font-semibold text-[#003c90] flex items-center gap-1 group-hover:gap-2 transition-all">
+                <span>Explore Solution</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- Track & Trace -->
+          <a href="track-and-trace.html"
+            class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all group flex flex-col text-decoration-none">
+            <div class="h-40 bg-slate-900 relative overflow-hidden">
+              <img src="images/track-and-trace.jpg" alt="Track & Trace"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-white/20 backdrop-blur-md p-1.5 rounded-lg border border-white/20 text-white">
+                <span class="material-symbols-outlined fs-6">share_location</span>
+              </div>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h4
+                  class="font-headline font-bold text-base text-[#001945] group-hover:text-[#003c90] transition-colors mb-1">
+                  Track &amp; Trace
+                </h4>
+                <p class="text-xs text-slate-600 line-clamp-2 mb-3">
+                  End-to-end supply chain visibility with IoT telematics and geofencing.
+                </p>
+              </div>
+              <span
+                class="text-xs font-semibold text-[#003c90] flex items-center gap-1 group-hover:gap-2 transition-all">
+                <span>Explore Solution</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- File Management -->
+          <a href="file-management.html"
+            class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all group flex flex-col text-decoration-none">
+            <div class="h-40 bg-slate-900 relative overflow-hidden">
+              <img src="images/file-management.jpg" alt="File Management"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-white/20 backdrop-blur-md p-1.5 rounded-lg border border-white/20 text-white">
+                <span class="material-symbols-outlined fs-6">folder_managed</span>
+              </div>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h4
+                  class="font-headline font-bold text-base text-[#001945] group-hover:text-[#003c90] transition-colors mb-1">
+                  File Management
+                </h4>
+                <p class="text-xs text-slate-600 line-clamp-2 mb-3">
+                  Unbroken chain-of-custody tracking for confidential paper archives.
+                </p>
+              </div>
+              <span
+                class="text-xs font-semibold text-[#003c90] flex items-center gap-1 group-hover:gap-2 transition-all">
+                <span>Explore Solution</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- Retail Management -->
+          <a href="retail-management.html"
+            class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all group flex flex-col text-decoration-none">
+            <div class="h-40 bg-slate-900 relative overflow-hidden">
+              <img src="images/retail-management.jpg" alt="Retail Management"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-white/20 backdrop-blur-md p-1.5 rounded-lg border border-white/20 text-white">
+                <span class="material-symbols-outlined fs-6">storefront</span>
+              </div>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h4
+                  class="font-headline font-bold text-base text-[#001945] group-hover:text-[#003c90] transition-colors mb-1">
+                  Retail Management
+                </h4>
+                <p class="text-xs text-slate-600 line-clamp-2 mb-3">
+                  Omnichannel POS automation and shelf-level replenishment sync.
+                </p>
+              </div>
+              <span
+                class="text-xs font-semibold text-[#003c90] flex items-center gap-1 group-hover:gap-2 transition-all">
+                <span>Explore Solution</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / CONSULTATION LEAD SECTION -->
+    <section id="contact" class="py-12 sm:py-16 bg-[#001945] text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 font-mono-tech">
+              Connect With Engineers
+            </span>
+            <h2 class="font-headline text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Ready to accelerate with Work-in-Progress?
+            </h2>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Connect with our manufacturing automation specialists to configure conveyor gates, PLC interfaces, and
+              shopfloor OEE tracking.
+            </p>
+            <div class="space-y-2.5 pt-2 text-xs text-slate-300 font-mono-tech">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-cyan-400 text-sm">mail</span>
+                <span>marketing@stallionindia.com</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-cyan-400 text-sm">call</span>
+                <span>+91 9846240458</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-cyan-400 text-sm">location_on</span>
+                <span>Stallion House, Paadam Stop, K P Vallon Road, Kadavanthara, Kochi - 682020</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="glass-panel-dark p-6 sm:p-8 rounded-2xl border border-white/15 shadow-2xl">
+              <form id="contact-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-mono-tech text-slate-300 mb-1">YOUR NAME</label>
+                    <input type="text" required placeholder="Jane Doe"
+                      class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-mono-tech text-slate-300 mb-1">COMPANY</label>
+                    <input type="text" required placeholder="Precision Manufacturing Ltd"
+                      class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm" />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-mono-tech text-slate-300 mb-1">WORK EMAIL</label>
+                    <input type="email" required placeholder="jane@precisionmfg.com"
+                      class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-mono-tech text-slate-300 mb-1">PHONE NUMBER</label>
+                    <input type="tel" placeholder="+91 9846240458"
+                      class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm" />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono-tech text-slate-300 mb-1">SHOPFLOOR REQUIREMENTS</label>
+                  <textarea rows="3"
+                    placeholder="Tell us about your production lines, cycle times, PLC brands, or WIP goals..."
+                    class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm"></textarea>
+                </div>
+
+                <button type="submit"
+                  class="w-full btn-primary text-white font-bold text-sm py-3 rounded-lg shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+                  <span>Send Message</span>
+                  <span class="material-symbols-outlined text-sm">send</span>
+                </button>
+              </form>
+
+              <div id="contact-success" class="d-none text-center py-8">
+                <span class="material-symbols-outlined text-emerald-400 fs-1">check_circle</span>
+                <h4 class="font-headline font-bold text-white text-lg mt-2">Inquiry Submitted</h4>
+                <p class="text-xs text-slate-300 mt-1">Our technical solution team will connect with you within 2
+                  business hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#00102e] text-slate-400 py-10 border-t border-white/10 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-white">
+            <span class="font-headline font-bold text-base text-white">Stallion OneByte</span>
+          </div>
+          <p class="text-slate-400 leading-relaxed text-xs">
+            In-house software development division of Stallion Group driving industrial IoT, RFID tracking, and supply
+            chain automation.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="font-headline font-bold text-white text-xs uppercase tracking-wider mb-3">Solutions</h5>
+          <ul class="space-y-2 list-unstyled text-xs">
+            <li><a href="asset-management.html" class="text-decoration-none text-slate-300 hover:text-white">Asset
+                Management</a></li>
+            <li><a href="warehouse-management.html"
+                class="text-decoration-none text-slate-300 hover:text-white">Warehouse Systems</a></li>
+            <li><a href="track-and-trace.html" class="text-decoration-none text-slate-300 hover:text-white">Track &amp;
+                Trace</a></li>
+            <li><a href="work-in-progress.html"
+                class="text-decoration-none text-cyan-400 font-semibold">Work-in-progress</a></li>
+            <li><a href="file-management.html" class="text-decoration-none text-slate-300 hover:text-white">File
+                Management</a></li>
+            <li><a href="retail-management.html" class="text-decoration-none text-slate-300 hover:text-white">Retail
+                Management</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-headline font-bold text-white text-xs uppercase tracking-wider mb-3">Enterprise</h5>
+          <ul class="space-y-2 list-unstyled text-xs">
+            <li><a href="index.html#vision-mission"
+                class="text-decoration-none text-slate-300 hover:text-white">Corporate Governance</a></li>
+            <li><a href="index.html#about" class="text-decoration-none text-slate-300 hover:text-white">Privacy &amp;
+                Compliance</a></li>
+            <li><a href="#contact" class="text-decoration-none text-slate-300 hover:text-white">Contact
+                Sales</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-headline font-bold text-white text-xs uppercase tracking-wider mb-3">Connect</h5>
+          <p class="text-slate-300 text-xs leading-relaxed mb-2">
+            Global Support &amp; Engineering HQ<br />
+            Kadavanthara, Kochi, Kerala – 682020
+          </p>
+          <span class="text-cyan-400 font-mono-tech block">+91 9846240458</span>
+        </div>
+      </div>
+
+      <div class="pt-6 text-center text-slate-400 text-[11px]">
+        &copy; 2026 Stallion OneByte. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOOTSTRAP MODAL: REQUEST DEMO -->
+  <div class="modal fade" id="requestDemoModal" tabindex="-1" aria-labelledby="demoModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-2xl bg-white overflow-hidden">
+        <div class="modal-header bg-[#f8f9fa] border-bottom border-slate-100 px-4 py-3">
+          <div>
+            <h5 id="demoModalTitle" class="modal-title font-headline font-bold text-base text-[#001945]">
+              Request Live Enterprise Demo
+            </h5>
+            <p class="text-xs text-slate-500 mb-0">Live interactive walkthrough with our principal solution engineer</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="demo-form" class="space-y-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Target Solution</label>
+              <select id="demo-solution-select" class="form-select text-sm py-2 rounded-lg border-slate-300">
+                <option value="asset-management">Asset Management (Fixed &amp; IT Lifecycle)</option>
+                <option value="warehouse-management">Warehouse Management (WMS &amp; Storage)</option>
+                <option value="track-and-trace">Track &amp; Trace (Global Telemetry)</option>
+                <option value="work-in-progress" selected>Work-in-progress (Shopfloor IoT)</option>
+                <option value="file-management">File Management (Records &amp; Audit)</option>
+                <option value="retail-management">Retail Management (POS &amp; Omni)</option>
+              </select>
+            </div>
+            <div class="row g-2">
+              <div class="col-6">
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
+                <input type="text" required placeholder="Alex Morgan"
+                  class="form-control text-sm py-2 rounded-lg border-slate-300" />
+              </div>
+              <div class="col-6">
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Company</label>
+                <input type="text" required placeholder="Enterprise Corp"
+                  class="form-control text-sm py-2 rounded-lg border-slate-300" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Corporate Email</label>
+              <input type="email" required placeholder="alex@enterprise.com"
+                class="form-control text-sm py-2 rounded-lg border-slate-300" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Contact Phone</label>
+              <input type="tel" placeholder="+91 9846240458"
+                class="form-control text-sm py-2 rounded-lg border-slate-300" />
+            </div>
+            <button type="submit"
+              class="btn-primary w-100 text-white font-bold py-2.5 rounded-lg text-sm mt-3 cursor-pointer">
+              Confirm Demo Schedule
+            </button>
+          </form>
+          <div id="demo-success" class="d-none text-center py-6">
+            <span class="material-symbols-outlined text-emerald-500 fs-1">verified</span>
+            <h5 class="font-headline font-bold text-base text-[#001945] mt-2">Demo Request Received!</h5>
+            <p class="text-xs text-slate-500 mt-1">A calendar invitation and sandbox credentials will be dispatched to
+              your email.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOTSTRAP MODAL: SSO / AUTH -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-2xl bg-white overflow-hidden">
+        <div class="modal-header bg-[#f8f9fa] border-bottom border-slate-100 px-4 py-3">
+          <div class="d-flex align-items-center gap-2">
+            <img src="images/logo.png" alt="Logo" class="h-5 w-auto" />
+            <h5 id="authModalTitle" class="modal-title font-headline font-bold text-sm text-[#003c90]">
+              Stallion Enterprise SSO
+            </h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="auth-form" class="space-y-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Corporate ID / Email</label>
+              <input type="email" required placeholder="name@stallion-enterprise.com"
+                class="form-control text-sm py-2 rounded-lg border-slate-300" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Access Token / Password</label>
+              <input type="password" required placeholder="••••••••••••"
+                class="form-control text-sm py-2 rounded-lg border-slate-300" />
+            </div>
+            <button type="submit"
+              class="btn-primary w-100 text-white font-bold py-2.5 rounded-lg text-sm mt-3 cursor-pointer">
+              Authenticate Session
+            </button>
+          </form>
+          <div id="auth-success" class="d-none text-center py-4">
+            <span class="material-symbols-outlined text-emerald-500 fs-2">verified_user</span>
+            <p class="text-xs text-slate-600 font-bold mt-2">SSO Session Verified</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Vanilla JavaScript Product Page Controller -->
+  <script src="src/product.js"></script>
+</body>
+
+</html>

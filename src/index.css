@@ -17,6 +17,15 @@
   --color-outline-variant: #c3c6d5;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1.5rem;
+}
+
+[id] {
+  scroll-margin-top: 1.5rem;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: #f8f9fa;
@@ -26,7 +35,13 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, .font-headline {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-headline {
   font-family: 'Hanken Grotesk', sans-serif;
 }
 
@@ -108,8 +123,15 @@ h1, h2, h3, h4, h5, h6, .font-headline {
 }
 
 @keyframes pulseSubtle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 .animate-float {
