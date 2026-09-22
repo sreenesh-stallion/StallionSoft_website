@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stallion OneByte - Digital Intelligence Platform</title>
+    <meta
+      name="description"
+      content="Stallion OneByte - In-house software development division of Stallion Group driving industrial efficiency with RFID, Barcode, Warehouse, and Asset Management."
+    />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Tailwind CSS Stylesheet -->
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body class="bg-[#f8f9fa] text-[#191c1d] min-h-screen flex flex-col">
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-14 flex items-center justify-between">
+        <!-- Brand Logo & Name -->
+        <a href="#" class="flex items-center gap-2.5 text-decoration-none group">
+          <img
+            src="/images/logo.png"
+            alt="Stallion OneByte Logo"
+            class="h-8 w-auto object-contain transition-transform group-hover:scale-105"
+          />
+          <div class="flex items-center gap-1.5">
+            <span class="font-headline font-bold text-lg text-[#001945] tracking-tight">
+              Stallion Software Hub
+            </span>
+            <span class="hidden sm:inline-block text-[11px] font-mono-tech font-semibold bg-blue-100 text-[#003c90] px-1.5 py-0.5 rounded">
+              OneByte
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+          <a href="#hero-carousel" class="text-xs font-semibold text-slate-600 hover:text-[#003c90] transition-colors text-decoration-none">
+            Solutions
+          </a>
+          <a href="#about-section" class="text-xs font-semibold text-slate-600 hover:text-[#003c90] transition-colors text-decoration-none">
+            About
+          </a>
+          <a href="#vision-mission" class="text-xs font-semibold text-slate-600 hover:text-[#003c90] transition-colors text-decoration-none">
+            Vision &amp; Mission
+          </a>
+          <a href="#solutions-grid" class="text-xs font-semibold text-slate-600 hover:text-[#003c90] transition-colors text-decoration-none">
+            Ecosystem
+          </a>
+          <a href="#contact-section" class="text-xs font-semibold text-slate-600 hover:text-[#003c90] transition-colors text-decoration-none">
+            Contact
+          </a>
+        </nav>
+
+        <!-- Right Side Actions -->
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            data-open-auth
+            class="hidden sm:inline-flex text-xs font-bold text-[#003c90] hover:text-[#001945] px-3 py-1.5 transition-colors border-0 bg-transparent cursor-pointer"
+          >
+            Log In
+          </button>
+          <button
+            type="button"
+            data-open-demo="warehouse-management"
+            class="btn-primary text-white text-xs font-bold px-3.5 py-2 rounded-lg shadow-sm hover:opacity-95 transition-all cursor-pointer d-flex align-items-center gap-1.5"
+          >
+            <span>Get Started</span>
+            <span class="material-symbols-outlined fs-6">arrow_forward</span>
+          </button>
+
+          <!-- Mobile Menu Hamburger Button -->
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            class="md:hidden p-1.5 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors border-0 bg-transparent cursor-pointer"
+            aria-label="Toggle Navigation Menu"
+          >
+            <span class="material-symbols-outlined fs-5">menu</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-menu-drawer" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3 shadow-lg">
+        <a href="#hero-carousel" class="block text-sm font-semibold text-slate-700 hover:text-[#003c90] text-decoration-none py-1">
+          Solutions
+        </a>
+        <a href="#about-section" class="block text-sm font-semibold text-slate-700 hover:text-[#003c90] text-decoration-none py-1">
+          About
+        </a>
+        <a href="#vision-mission" class="block text-sm font-semibold text-slate-700 hover:text-[#003c90] text-decoration-none py-1">
+          Vision &amp; Mission
+        </a>
+        <a href="#solutions-grid" class="block text-sm font-semibold text-slate-700 hover:text-[#003c90] text-decoration-none py-1">
+          Ecosystem
+        </a>
+        <a href="#contact-section" class="block text-sm font-semibold text-slate-700 hover:text-[#003c90] text-decoration-none py-1">
+          Contact
+        </a>
+        <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+          <button
+            type="button"
+            data-open-auth
+            class="text-xs font-bold text-[#003c90] bg-transparent border-0 py-1"
+          >
+            Enterprise SSO Login
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow pt-14">
+      <!-- HERO CAROUSEL SECTION -->
+      <section
+        id="hero-carousel"
+        class="relative overflow-hidden bg-gradient-to-b from-[#f3f4f5] via-[#f8f9fa] to-white border-b border-slate-200/70"
+      >
+        <!-- Background Mesh Texture (Downloaded Local Image) -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none mix-blend-multiply overflow-hidden">
+          <img
+            src="/images/mesh-bg.png"
+            alt="Mesh Pattern"
+            class="w-full h-full object-cover scale-105"
+          />
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-4 sm:pt-6 pb-5 sm:pb-6">
+
+          <!-- SLIDE 0: ASSET MANAGEMENT -->
+          <div class="carousel-slide" data-slide="0">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div class="lg:col-span-7 space-y-5">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+                  Enterprise Asset Intelligence
+                </span>
+                <h1 class="font-headline text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#001945] tracking-tight leading-[1.15]">
+                  Complete Lifecycle Visibility with
+                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0f52ba] to-[#00b4d8]">
+                    Asset Management.
+                  </span>
+                </h1>
+                <p class="text-base sm:text-lg text-[#434653] leading-relaxed max-w-2xl">
+                  Empower your enterprise to monitor, govern, and optimize tangible and intangible capital assets. Ensure continuous audit readiness and prevent downtime with automated RFID tracking.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Automated Depreciation
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    RFID Audit Verification
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Multi-Branch Sync
+                  </span>
+                </div>
+                <div class="pt-2 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    data-open-solution="asset-management"
+                    class="btn-primary text-white text-sm font-bold px-6 py-3 rounded-lg shadow-md hover:opacity-95 transition-all cursor-pointer flex items-center gap-2"
+                  >
+                    <span>Explore Solution</span>
+                    <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                  </button>
+                  <button
+                    type="button"
+                    data-open-demo="asset-management"
+                    class="bg-white hover:bg-slate-50 text-[#001945] font-semibold text-sm px-6 py-3 rounded-lg border border-slate-300 shadow-2xs transition-colors cursor-pointer"
+                  >
+                    Request Live Demo
+                  </button>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
+                  <img
+                    src="/images/asset-management.jpg"
+                    alt="Asset Management Dashboard"
+                    class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
+                  <!-- Floating Metric 1 -->
+                  <div class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-cyan-600 fs-6">verified</span>
+                      <span class="text-xs font-bold text-[#001945]">99.8% Accuracy</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Real-Time Audit Sync</span>
+                  </div>
+                  <!-- Floating Metric 2 -->
+                  <div class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-emerald-600 fs-6">trending_up</span>
+                      <span class="text-xs font-bold text-[#001945]">-38% Loss Rate</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Autonomous Tracking</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 1: WAREHOUSE MANAGEMENT (DEFAULT ACTIVE MATCHING SCREENSHOT) -->
+          <div class="carousel-slide active" data-slide="1">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div class="lg:col-span-7 space-y-5">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+                  Intelligent Logistics &amp; Supply Chain
+                </span>
+                <h1 class="font-headline text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#001945] tracking-tight leading-[1.15]">
+                  Next-Gen Orchestration with
+                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0f52ba] to-[#00b4d8]">
+                    Warehouse Management.
+                  </span>
+                </h1>
+                <p class="text-base sm:text-lg text-[#434653] leading-relaxed max-w-2xl">
+                  Control storage, picking, dispatching, and bin-level movements instantly. Seamlessly synchronize Barcode &amp; high-speed RFID scanning for frictionless fulfillment.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Automated Bin Allocation
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Instant Pallet Verification
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    ERP &amp; SAP Connectors
+                  </span>
+                </div>
+                <div class="pt-2 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    data-open-solution="warehouse-management"
+                    class="btn-primary text-white text-sm font-bold px-6 py-3 rounded-lg shadow-md hover:opacity-95 transition-all cursor-pointer flex items-center gap-2"
+                  >
+                    <span>Explore Solution</span>
+                    <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                  </button>
+                  <button
+                    type="button"
+                    data-open-demo="warehouse-management"
+                    class="bg-white hover:bg-slate-50 text-[#001945] font-semibold text-sm px-6 py-3 rounded-lg border border-slate-300 shadow-2xs transition-colors cursor-pointer"
+                  >
+                    Request Live Demo
+                  </button>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
+                  <img
+                    src="/images/warehouse-management.jpg"
+                    alt="Warehouse Management Automation"
+                    class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
+                  <!-- Floating Badge 1 (3x Faster Picking) -->
+                  <div class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-cyan-600 fs-6">bolt</span>
+                      <span class="text-xs font-bold text-[#001945]">3x Faster Picking</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Guided Path Routing</span>
+                  </div>
+                  <!-- Floating Badge 2 (Zero Stockout) -->
+                  <div class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-emerald-600 fs-6">inventory</span>
+                      <span class="text-xs font-bold text-[#001945]">Zero Stockout</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Predictive Restocking</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2: TRACK & TRACE -->
+          <div class="carousel-slide" data-slide="2">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div class="lg:col-span-7 space-y-5">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+                  Global Logistics &amp; Telemetry
+                </span>
+                <h1 class="font-headline text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#001945] tracking-tight leading-[1.15]">
+                  Worldwide Precision with
+                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0f52ba] to-[#00b4d8]">
+                    Track &amp; Trace.
+                  </span>
+                </h1>
+                <p class="text-base sm:text-lg text-[#434653] leading-relaxed max-w-2xl">
+                  Determine past and live geographic milestones across international distribution corridors with high-precision IoT tracking, digital waybills, and geofencing.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Multi-modal Telemetry
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Anti-counterfeit Crypto Tags
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Dynamic ETA Alerts
+                  </span>
+                </div>
+                <div class="pt-2 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    data-open-solution="track-and-trace"
+                    class="btn-primary text-white text-sm font-bold px-6 py-3 rounded-lg shadow-md hover:opacity-95 transition-all cursor-pointer flex items-center gap-2"
+                  >
+                    <span>Explore Solution</span>
+                    <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                  </button>
+                  <button
+                    type="button"
+                    data-open-demo="track-and-trace"
+                    class="bg-white hover:bg-slate-50 text-[#001945] font-semibold text-sm px-6 py-3 rounded-lg border border-slate-300 shadow-2xs transition-colors cursor-pointer"
+                  >
+                    Request Live Demo
+                  </button>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
+                  <img
+                    src="/images/track-and-trace.jpg"
+                    alt="Track and Trace Worldwide"
+                    class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
+                  <!-- Floating Badge -->
+                  <div class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-cyan-600 fs-6">public</span>
+                      <span class="text-xs font-bold text-[#001945]">100% Traceability</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Point-to-Point Visibility</span>
+                  </div>
+                  <div class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-emerald-600 fs-6">radar</span>
+                      <span class="text-xs font-bold text-[#001945]">Live Geofence</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Smart Milestone Alerts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 3: WORK-IN-PROGRESS -->
+          <div class="carousel-slide" data-slide="3">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div class="lg:col-span-7 space-y-5">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+                  Manufacturing &amp; Shopfloor IoT
+                </span>
+                <h1 class="font-headline text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#001945] tracking-tight leading-[1.15]">
+                  Optimize Shopfloors with
+                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0f52ba] to-[#00b4d8]">
+                    Work-in-Progress.
+                  </span>
+                </h1>
+                <p class="text-base sm:text-lg text-[#434653] leading-relaxed max-w-2xl">
+                  Track unfinished goods, assemblies, and subcomponents across multi-stage production lines with sub-second RFID and Barcode telemetry.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Bottleneck Elimination
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Real-Time OEE Metrics
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Automated Quality Gates
+                  </span>
+                </div>
+                <div class="pt-2 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    data-open-solution="work-in-progress"
+                    class="btn-primary text-white text-sm font-bold px-6 py-3 rounded-lg shadow-md hover:opacity-95 transition-all cursor-pointer flex items-center gap-2"
+                  >
+                    <span>Explore Solution</span>
+                    <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                  </button>
+                  <button
+                    type="button"
+                    data-open-demo="work-in-progress"
+                    class="bg-white hover:bg-slate-50 text-[#001945] font-semibold text-sm px-6 py-3 rounded-lg border border-slate-300 shadow-2xs transition-colors cursor-pointer"
+                  >
+                    Request Live Demo
+                  </button>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
+                  <img
+                    src="/images/work-in-progress.jpg"
+                    alt="Work in progress automation"
+                    class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
+                  <!-- Floating Badge -->
+                  <div class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-cyan-600 fs-6">precision_manufacturing</span>
+                      <span class="text-xs font-bold text-[#001945]">-42% Cycle Latency</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Stage-wise Traceability</span>
+                  </div>
+                  <div class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-emerald-600 fs-6">tune</span>
+                      <span class="text-xs font-bold text-[#001945]">Sub-second Sync</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Conveyor RFID Sensors</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 4: FILE MANAGEMENT -->
+          <div class="carousel-slide" data-slide="4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div class="lg:col-span-7 space-y-5">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+                  Records Governance &amp; Compliance
+                </span>
+                <h1 class="font-headline text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#001945] tracking-tight leading-[1.15]">
+                  Enterprise Control with
+                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0f52ba] to-[#00b4d8]">
+                    File Management.
+                  </span>
+                </h1>
+                <p class="text-base sm:text-lg text-[#434653] leading-relaxed max-w-2xl">
+                  Track sensitive corporate documentation, legal files, and archive movements rapidly using intelligent 2D Barcode and RFID check-in/check-out protocols.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Chain of Custody Audits
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Confidential Access Tiers
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Rapid Archive Retrieval
+                  </span>
+                </div>
+                <div class="pt-2 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    data-open-solution="file-management"
+                    class="btn-primary text-white text-sm font-bold px-6 py-3 rounded-lg shadow-md hover:opacity-95 transition-all cursor-pointer flex items-center gap-2"
+                  >
+                    <span>Explore Solution</span>
+                    <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                  </button>
+                  <button
+                    type="button"
+                    data-open-demo="file-management"
+                    class="bg-white hover:bg-slate-50 text-[#001945] font-semibold text-sm px-6 py-3 rounded-lg border border-slate-300 shadow-2xs transition-colors cursor-pointer"
+                  >
+                    Request Live Demo
+                  </button>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
+                  <img
+                    src="/images/file-management.jpg"
+                    alt="File management smart archives"
+                    class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
+                  <!-- Floating Badge -->
+                  <div class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-cyan-600 fs-6">shield</span>
+                      <span class="text-xs font-bold text-[#001945]">100% Audit Proof</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Tamper-evident logs</span>
+                  </div>
+                  <div class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-emerald-600 fs-6">search</span>
+                      <span class="text-xs font-bold text-[#001945]">&lt; 10 Sec Search</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Instant File Location</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 5: RETAIL MANAGEMENT -->
+          <div class="carousel-slide" data-slide="5">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div class="lg:col-span-7 space-y-5">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
+                  Omnichannel Retail &amp; POS Intelligence
+                </span>
+                <h1 class="font-headline text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#001945] tracking-tight leading-[1.15]">
+                  Elevate In-Store Growth with
+                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0f52ba] to-[#00b4d8]">
+                    Retail Management.
+                  </span>
+                </h1>
+                <p class="text-base sm:text-lg text-[#434653] leading-relaxed max-w-2xl">
+                  Automate floor activities, inventory reconciliation, and wholesaler transactions. Make data-driven merchandising decisions backed by precise real-time checkout telemetry.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Live Shelf Replenishment
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Omnichannel Order Sync
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-slate-200 text-[#003c90] font-medium">
+                    <span class="material-symbols-outlined text-emerald-600 fs-6">check_circle</span>
+                    Fast POS Barcode Handling
+                  </span>
+                </div>
+                <div class="pt-2 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    data-open-solution="retail-management"
+                    class="btn-primary text-white text-sm font-bold px-6 py-3 rounded-lg shadow-md hover:opacity-95 transition-all cursor-pointer flex items-center gap-2"
+                  >
+                    <span>Explore Solution</span>
+                    <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                  </button>
+                  <button
+                    type="button"
+                    data-open-demo="retail-management"
+                    class="bg-white hover:bg-slate-50 text-[#001945] font-semibold text-sm px-6 py-3 rounded-lg border border-slate-300 shadow-2xs transition-colors cursor-pointer"
+                  >
+                    Request Live Demo
+                  </button>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
+                  <img
+                    src="/images/retail-management.jpg"
+                    alt="Retail Storefront POS"
+                    class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
+                  <!-- Floating Badge -->
+                  <div class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-cyan-600 fs-6">shopping_cart_checkout</span>
+                      <span class="text-xs font-bold text-[#001945]">+25% Checkout Speed</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Omni POS Integration</span>
+                  </div>
+                  <div class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-emerald-600 fs-6">insights</span>
+                      <span class="text-xs font-bold text-[#001945]">Predictive Sell-Through</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Accurate Merchandising</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM 6-PILL NAVIGATION TABS (MATCHING SCREENSHOT) -->
+          <div class="mt-4 sm:mt-5 hidden md:grid grid-cols-6 gap-2.5 lg:gap-3">
+            <!-- Pill 0: Asset Mgmt -->
+            <button
+              type="button"
+              class="nav-pill p-2.5 rounded-xl text-left cursor-pointer flex flex-col justify-between"
+              data-target="0"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="material-symbols-outlined text-[#003c90] fs-5">inventory_2</span>
+                <span class="nav-pill-title text-xs font-bold text-slate-700 truncate">Asset Mgmt</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono-tech truncate">Lifecycle &amp; RFID</span>
+              <div class="tab-indicator-bar"></div>
+            </button>
+
+            <!-- Pill 1: Warehouse (ACTIVE) -->
+            <button
+              type="button"
+              class="nav-pill active p-2.5 rounded-xl text-left cursor-pointer flex flex-col justify-between"
+              data-target="1"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="material-symbols-outlined text-[#003c90] fs-5">warehouse</span>
+                <span class="nav-pill-title text-xs font-bold text-slate-700 truncate">Warehouse</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono-tech truncate">Storage &amp; Picking</span>
+              <div class="tab-indicator-bar"></div>
+            </button>
+
+            <!-- Pill 2: Track & Trace -->
+            <button
+              type="button"
+              class="nav-pill p-2.5 rounded-xl text-left cursor-pointer flex flex-col justify-between"
+              data-target="2"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="material-symbols-outlined text-[#003c90] fs-5">share_location</span>
+                <span class="nav-pill-title text-xs font-bold text-slate-700 truncate">Track &amp; Trace</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono-tech truncate">Global Telemetry</span>
+              <div class="tab-indicator-bar"></div>
+            </button>
+
+            <!-- Pill 3: Work-in-progress -->
+            <button
+              type="button"
+              class="nav-pill p-2.5 rounded-xl text-left cursor-pointer flex flex-col justify-between"
+              data-target="3"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="material-symbols-outlined text-[#003c90] fs-5">conveyor_belt</span>
+                <span class="nav-pill-title text-xs font-bold text-slate-700 truncate">Work-in-progress</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono-tech truncate">Shopfloor Trace</span>
+              <div class="tab-indicator-bar"></div>
+            </button>
+
+            <!-- Pill 4: File Mgmt -->
+            <button
+              type="button"
+              class="nav-pill p-2.5 rounded-xl text-left cursor-pointer flex flex-col justify-between"
+              data-target="4"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="material-symbols-outlined text-[#003c90] fs-5">folder_managed</span>
+                <span class="nav-pill-title text-xs font-bold text-slate-700 truncate">File Mgmt</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono-tech truncate">Records &amp; Audit</span>
+              <div class="tab-indicator-bar"></div>
+            </button>
+
+            <!-- Pill 5: Retail Mgmt -->
+            <button
+              type="button"
+              class="nav-pill p-2.5 rounded-xl text-left cursor-pointer flex flex-col justify-between"
+              data-target="5"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="material-symbols-outlined text-[#003c90] fs-5">storefront</span>
+                <span class="nav-pill-title text-xs font-bold text-slate-700 truncate">Retail Mgmt</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono-tech truncate">POS &amp; Merchandising</span>
+              <div class="tab-indicator-bar"></div>
+            </button>
+          </div>
+
+          <!-- Mobile Indicator Dots -->
+          <div class="mt-4 flex md:hidden items-center justify-center gap-2">
+            <button type="button" class="w-2 h-1.5 rounded-full bg-slate-300" data-dot="0" aria-label="Slide 1"></button>
+            <button type="button" class="w-6 h-1.5 rounded-full bg-[#003c90]" data-dot="1" aria-label="Slide 2"></button>
+            <button type="button" class="w-2 h-1.5 rounded-full bg-slate-300" data-dot="2" aria-label="Slide 3"></button>
+            <button type="button" class="w-2 h-1.5 rounded-full bg-slate-300" data-dot="3" aria-label="Slide 4"></button>
+            <button type="button" class="w-2 h-1.5 rounded-full bg-slate-300" data-dot="4" aria-label="Slide 5"></button>
+            <button type="button" class="w-2 h-1.5 rounded-full bg-slate-300" data-dot="5" aria-label="Slide 6"></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about-section" class="py-5 sm:py-6 bg-[#f8f9fa] border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div class="max-w-4xl mx-auto text-center space-y-2">
+            <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-[#001945] tracking-tight">
+              About Stallion OneByte
+            </h2>
+            <p class="text-sm sm:text-base text-[#434653] leading-relaxed">
+              Stallion OneByte is a division of Stallion Group, serving as an in-house software development center focused on driving industrial and enterprise efficiency. We specialize in providing innovative technology solutions that help businesses flourish, offering an entire range of IT services to conceptualize and realize digital initiatives.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR VISION & OUR MISSION BENTO CARDS -->
+      <section id="vision-mission" class="py-5 sm:py-6 bg-[#f3f4f5]/60 border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div class="row g-3 sm:g-4">
+            <!-- Our Vision -->
+            <div class="col-12 col-md-6">
+              <div class="glass-panel p-5 sm:p-6 rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 h-100 border border-white/70">
+                <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#003c90] flex items-center justify-center mb-3 shadow-2xs">
+                  <span class="material-symbols-outlined fs-4">visibility</span>
+                </div>
+                <h3 class="font-headline text-xl sm:text-2xl font-bold text-[#001945] mb-2">
+                  Our Vision
+                </h3>
+                <p class="text-sm sm:text-base text-[#434653] leading-relaxed mb-0">
+                  To become a Globally Leading and Reputed Organisation, respected by all Stake Holders such as Customers, Employees, Partners and Society.
+                </p>
+              </div>
+            </div>
+
+            <!-- Our Mission -->
+            <div class="col-12 col-md-6">
+              <div class="glass-panel p-5 sm:p-6 rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 h-100 border border-white/70">
+                <div class="w-11 h-11 rounded-xl bg-cyan-50 text-[#004757] flex items-center justify-center mb-3 shadow-2xs">
+                  <span class="material-symbols-outlined fs-4">rocket_launch</span>
+                </div>
+                <h3 class="font-headline text-xl sm:text-2xl font-bold text-[#001945] mb-2">
+                  Our Mission
+                </h3>
+                <p class="text-sm sm:text-base text-[#434653] leading-relaxed mb-0">
+                  To achieve profit by providing best of products, technologies, services to its customers by practicing business ethics, and to become useful to the society.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTELLIGENT SOLUTIONS ECOSYSTEM (6-CARD GRID) -->
+      <section id="solutions-grid" class="py-6 sm:py-7 bg-[#f8f9fa] border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div class="text-center mb-6 sm:mb-7">
+            <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-[#001945] tracking-tight">
+              Intelligent Solutions Ecosystem
+            </h2>
+            <p class="text-sm sm:text-base text-[#434653] mt-1.5 max-w-2xl mx-auto">
+              Using Stallion.Soft is equivalent to getting work done quickly and efficiently.
+            </p>
+          </div>
+
+          <!-- 6-Card Grid Matching Image 1 -->
+          <div class="row g-4">
+            <!-- Card 1: Asset Management -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-100 cursor-pointer"
+                data-open-solution="asset-management"
+              >
+                <div class="h-52 bg-slate-900 overflow-hidden relative">
+                  <img
+                    src="/images/asset-management.jpg"
+                    alt="Asset Management"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                  <div class="absolute bottom-4 left-4 z-20 bg-white/20 backdrop-blur-md p-2 rounded-lg border border-white/20 flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined fs-5">inventory_2</span>
+                  </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h4 class="font-headline text-xl font-bold text-[#001945] mb-2 group-hover:text-[#003c90] transition-colors">
+                      Asset Management
+                    </h4>
+                    <p class="text-sm text-[#434653] line-clamp-3 leading-relaxed mb-4">
+                      Facilitates organisations in managing their tangible and intangible assets. Maintains records to monitor asset state and assignments.
+                    </p>
+                  </div>
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-[#003c90] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span>Learn More</span>
+                      <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                    </span>
+                    <span class="text-xs text-slate-400 font-mono-tech uppercase">Asset Mgmt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Warehouse Management -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-100 cursor-pointer"
+                data-open-solution="warehouse-management"
+              >
+                <div class="h-52 bg-slate-900 overflow-hidden relative">
+                  <img
+                    src="/images/warehouse-management.jpg"
+                    alt="Warehouse Management"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                  <div class="absolute bottom-4 left-4 z-20 bg-white/20 backdrop-blur-md p-2 rounded-lg border border-white/20 flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined fs-5">warehouse</span>
+                  </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h4 class="font-headline text-xl font-bold text-[#001945] mb-2 group-hover:text-[#003c90] transition-colors">
+                      Warehouse Management
+                    </h4>
+                    <p class="text-sm text-[#434653] line-clamp-3 leading-relaxed mb-4">
+                      Control movement and storage of materials within a warehouse and process associated transactions using Barcode and RFID.
+                    </p>
+                  </div>
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-[#003c90] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span>Learn More</span>
+                      <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                    </span>
+                    <span class="text-xs text-slate-400 font-mono-tech uppercase">Warehouse</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: File Management -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-100 cursor-pointer"
+                data-open-solution="file-management"
+              >
+                <div class="h-52 bg-slate-900 overflow-hidden relative">
+                  <img
+                    src="/images/file-management.jpg"
+                    alt="File Management"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                  <div class="absolute bottom-4 left-4 z-20 bg-white/20 backdrop-blur-md p-2 rounded-lg border border-white/20 flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined fs-5">folder_managed</span>
+                  </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h4 class="font-headline text-xl font-bold text-[#001945] mb-2 group-hover:text-[#003c90] transition-colors">
+                      File Management
+                    </h4>
+                    <p class="text-sm text-[#434653] line-clamp-3 leading-relaxed mb-4">
+                      Track documents effectively and rapidly using Barcode technology to ensure controlled and improved distribution.
+                    </p>
+                  </div>
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-[#003c90] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span>Learn More</span>
+                      <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                    </span>
+                    <span class="text-xs text-slate-400 font-mono-tech uppercase">File Mgmt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Work-in-progress -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-100 cursor-pointer"
+                data-open-solution="work-in-progress"
+              >
+                <div class="h-52 bg-slate-900 overflow-hidden relative">
+                  <img
+                    src="/images/work-in-progress.jpg"
+                    alt="Work in Progress"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                  <div class="absolute bottom-4 left-4 z-20 bg-white/20 backdrop-blur-md p-2 rounded-lg border border-white/20 flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined fs-5">conveyor_belt</span>
+                  </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h4 class="font-headline text-xl font-bold text-[#001945] mb-2 group-hover:text-[#003c90] transition-colors">
+                      Work-in-progress
+                    </h4>
+                    <p class="text-sm text-[#434653] line-clamp-3 leading-relaxed mb-4">
+                      Manage unfinished items in a production process or supply chain with real-time traceability using RFID.
+                    </p>
+                  </div>
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-[#003c90] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span>Learn More</span>
+                      <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                    </span>
+                    <span class="text-xs text-slate-400 font-mono-tech uppercase">Work-in-progress</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Retail Management -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-100 cursor-pointer"
+                data-open-solution="retail-management"
+              >
+                <div class="h-52 bg-slate-900 overflow-hidden relative">
+                  <img
+                    src="/images/retail-management.jpg"
+                    alt="Retail Management"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                  <div class="absolute bottom-4 left-4 z-20 bg-white/20 backdrop-blur-md p-2 rounded-lg border border-white/20 flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined fs-5">storefront</span>
+                  </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h4 class="font-headline text-xl font-bold text-[#001945] mb-2 group-hover:text-[#003c90] transition-colors">
+                      Retail Management
+                    </h4>
+                    <p class="text-sm text-[#434653] line-clamp-3 leading-relaxed mb-4">
+                      Automate activities of retailers and wholesalers to make correct merchandising decisions using precise POS data.
+                    </p>
+                  </div>
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-[#003c90] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span>Learn More</span>
+                      <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                    </span>
+                    <span class="text-xs text-slate-400 font-mono-tech uppercase">Retail Mgmt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6: Track & Trace -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-100 cursor-pointer"
+                data-open-solution="track-and-trace"
+              >
+                <div class="h-52 bg-slate-900 overflow-hidden relative">
+                  <img
+                    src="/images/track-and-trace.jpg"
+                    alt="Track and Trace"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                  <div class="absolute bottom-4 left-4 z-20 bg-white/20 backdrop-blur-md p-2 rounded-lg border border-white/20 flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined fs-5">share_location</span>
+                  </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h4 class="font-headline text-xl font-bold text-[#001945] mb-2 group-hover:text-[#003c90] transition-colors">
+                      Track &amp; Trace
+                    </h4>
+                    <p class="text-sm text-[#434653] line-clamp-3 leading-relaxed mb-4">
+                      Determine current and past locations of products efficiently with modern identification technologies.
+                    </p>
+                  </div>
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-[#003c90] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span>Learn More</span>
+                      <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                    </span>
+                    <span class="text-xs text-slate-400 font-mono-tech uppercase">Track &amp; Trace</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUSTED BY INDUSTRY LEADERS SECTION -->
+      <section class="py-5 sm:py-6 bg-white border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
+          <h2 class="font-headline text-xl sm:text-2xl font-extrabold text-[#001945] mb-4">
+            Trusted by Industry Leaders
+          </h2>
+          <div class="d-flex flex-wrap justify-content-center gap-2.5 sm:gap-3.5 align-items-center">
+            <div class="px-4 py-2 bg-[#f3f4f5] border border-slate-200 rounded-xl hover:shadow-xs transition-shadow">
+              <span class="font-headline font-bold text-slate-500 text-xs sm:text-sm">APM Terminals</span>
+            </div>
+            <div class="px-4 py-2 bg-[#f3f4f5] border border-slate-200 rounded-xl hover:shadow-xs transition-shadow">
+              <span class="font-headline font-bold text-slate-500 text-xs sm:text-sm">Reliance Logistics</span>
+            </div>
+            <div class="px-4 py-2 bg-[#f3f4f5] border border-slate-200 rounded-xl hover:shadow-xs transition-shadow">
+              <span class="font-headline font-bold text-slate-500 text-xs sm:text-sm">DHL Supply Chain</span>
+            </div>
+            <div class="px-4 py-2 bg-[#f3f4f5] border border-slate-200 rounded-xl hover:shadow-xs transition-shadow">
+              <span class="font-headline font-bold text-slate-500 text-xs sm:text-sm">Honeywell Auto</span>
+            </div>
+            <div class="px-4 py-2 bg-[#f3f4f5] border border-slate-200 rounded-xl hover:shadow-xs transition-shadow">
+              <span class="font-headline font-bold text-slate-500 text-xs sm:text-sm">Maersk Global</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- READY TO ACCELERATE? (CONTACT SECTION) -->
+      <section id="contact-section" class="relative overflow-hidden bg-[#001945] text-white py-8 sm:py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div class="row g-4 align-items-center">
+            <!-- Left Info -->
+            <div class="col-12 col-lg-5 space-y-4">
+              <h2 class="font-headline text-2xl sm:text-3xl lg:text-[38px] font-extrabold tracking-tight leading-tight">
+                Ready to accelerate?
+              </h2>
+              <p class="text-sm sm:text-base text-[#b0c6ff] leading-relaxed">
+                Have a project in mind or want to consult with our experts? Let's collaborate to get your project done efficiently.
+              </p>
+              <div class="space-y-3 pt-1">
+                <a
+                  href="mailto:marketing@stallionindia.com"
+                  class="flex items-center gap-3 text-slate-200 hover:text-white transition-colors text-decoration-none"
+                >
+                  <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-[#3cd7ff]">
+                    <span class="material-symbols-outlined fs-5">mail</span>
+                  </div>
+                  <span class="font-medium text-sm">marketing@stallionindia.com</span>
+                </a>
+                <a
+                  href="tel:+919846240458"
+                  class="flex items-center gap-3 text-slate-200 hover:text-white transition-colors text-decoration-none"
+                >
+                  <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-[#3cd7ff]">
+                    <span class="material-symbols-outlined fs-5">call</span>
+                  </div>
+                  <span class="font-medium text-sm">+91 9846240458</span>
+                </a>
+                <div class="flex items-start gap-3 text-slate-200">
+                  <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-[#3cd7ff] shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined fs-5">location_on</span>
+                  </div>
+                  <span class="font-medium text-sm max-w-sm leading-relaxed">
+                    Stallion House, Paadam Stop, K P Vallon Road Kadavanthara – 682020
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Form Card -->
+            <div class="col-12 col-lg-7">
+              <div class="glass-panel-dark p-5 sm:p-6 rounded-2xl shadow-2xl relative overflow-hidden">
+                <form id="contact-form" class="space-y-3">
+                  <div class="row g-2.5">
+                    <div class="col-12 col-sm-6">
+                      <label class="block text-xs font-semibold uppercase tracking-wider mb-1 text-[#d9e2ff]">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Jane Doe"
+                        class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm"
+                      />
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <label class="block text-xs font-semibold uppercase tracking-wider mb-1 text-[#d9e2ff]">
+                        Company
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Acme Global Logistics"
+                        class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row g-2.5">
+                    <div class="col-12 col-sm-6">
+                      <label class="block text-xs font-semibold uppercase tracking-wider mb-1 text-[#d9e2ff]">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="jane@company.com"
+                        class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm"
+                      />
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <label class="block text-xs font-semibold uppercase tracking-wider mb-1 text-[#d9e2ff]">
+                        Phone
+                      </label>
+                      <input
+                        type="tel"
+                        placeholder="+91 9846240458"
+                        class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider mb-1 text-[#d9e2ff]">
+                      Message
+                    </label>
+                    <textarea
+                      rows="3"
+                      required
+                      placeholder="Tell us about your warehouse throughput, RFID objectives, or supply chain modernization goals..."
+                      class="form-control bg-white/5 border-white/20 text-white placeholder-slate-400 py-2 rounded-lg text-sm resize-none"
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn-primary w-full text-white py-3 rounded-lg font-bold text-sm shadow-lg mt-1 cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    <span>Send Message</span>
+                    <span class="material-symbols-outlined fs-6">send</span>
+                  </button>
+                </form>
+
+                <!-- Success Confirmation State -->
+                <div id="contact-success" class="d-none py-6 text-center space-y-2">
+                  <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center border border-emerald-500/30">
+                    <span class="material-symbols-outlined fs-3">check_circle</span>
+                  </div>
+                  <h4 class="font-headline text-lg font-bold text-white">
+                    Inquiry Dispatched Successfully
+                  </h4>
+                  <p class="text-slate-300 text-xs sm:text-sm max-w-md mx-auto">
+                    Thank you. A Stallion OneByte solutions engineer has received your message and will respond within 24 hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#001945] text-white border-t border-white/10 pt-8 pb-5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="row g-4 mb-4">
+          <div class="col-12 col-md-4">
+            <span class="font-headline text-2xl font-black text-white tracking-tight">
+              Stallion OneByte
+            </span>
+            <p class="text-[#b0c6ff] text-sm mt-1">Precise Digital Intelligence.</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed max-w-sm">
+              In-house software development division of Stallion Group driving industrial IoT, RFID tracking, and supply chain automation.
+            </p>
+          </div>
+          <div class="col-6 col-md-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-300 block mb-3">
+              Solutions
+            </span>
+            <ul class="list-unstyled space-y-2 text-sm text-[#c3c6d5]">
+              <li><a href="#" data-open-solution="asset-management" class="text-decoration-none text-slate-300 hover:text-white">Asset Management</a></li>
+              <li><a href="#" data-open-solution="warehouse-management" class="text-decoration-none text-slate-300 hover:text-white">Warehouse Systems</a></li>
+              <li><a href="#" data-open-solution="track-and-trace" class="text-decoration-none text-slate-300 hover:text-white">Track &amp; Trace</a></li>
+              <li><a href="#" data-open-solution="work-in-progress" class="text-decoration-none text-slate-300 hover:text-white">Work-in-progress</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-300 block mb-3">
+              Enterprise
+            </span>
+            <ul class="list-unstyled space-y-2 text-sm text-[#c3c6d5]">
+              <li><a href="#vision-mission" class="text-decoration-none text-slate-300 hover:text-white">Corporate Governance</a></li>
+              <li><a href="#about-section" class="text-decoration-none text-slate-300 hover:text-white">Privacy &amp; Compliance</a></li>
+              <li><a href="#contact-section" class="text-decoration-none text-slate-300 hover:text-white">Contact Sales</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-3">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-300 block mb-3">
+              Connect
+            </span>
+            <p class="text-xs text-slate-300 leading-relaxed mb-1">
+              Global Support &amp; Engineering HQ
+            </p>
+            <p class="text-xs text-[#b0c6ff] font-mono-tech mb-1">
+              Kadavanthara, Kochi, Kerala – 682020
+            </p>
+            <p class="text-xs text-[#3cd7ff] mb-0">
+              +91 9846240458
+            </p>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/10 text-center text-xs text-[#b0c6ff]/70">
+          © 2024 Stallion OneByte. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- BOOTSTRAP MODAL: INTERACTIVE SOLUTION DETAIL CONSOLE -->
+    <div
+      class="modal fade"
+      id="solutionDetailModal"
+      tabindex="-1"
+      aria-labelledby="modal-sol-title"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content border-0 rounded-4 shadow-2xl bg-[#f8f9fa] overflow-hidden">
+          <div class="modal-header bg-white border-bottom border-slate-200 px-4 py-3">
+            <div class="d-flex align-items-center gap-2">
+              <span id="modal-sol-category" class="badge bg-primary text-white font-mono-tech px-2.5 py-1">
+                Solution Category
+              </span>
+              <span class="text-xs text-slate-400 font-semibold">Stallion Enterprise Suite</span>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body p-4 space-y-4">
+            <!-- Modal Hero Overview Card -->
+            <div class="bg-white p-4 rounded-3 border border-slate-200 shadow-2xs">
+              <div class="row g-4 align-items-center">
+                <div class="col-12 col-md-7">
+                  <h3 id="modal-sol-title" class="font-headline fs-4 font-bold text-[#001945] mb-2">
+                    Solution Title
+                  </h3>
+                  <p id="modal-sol-desc" class="text-sm text-[#434653] leading-relaxed mb-3">
+                    Solution description goes here.
+                  </p>
+                  <p id="modal-sol-overview" class="text-xs text-slate-500 leading-relaxed mb-0">
+                    Comprehensive overview.
+                  </p>
+                </div>
+                <div class="col-12 col-md-5">
+                  <div class="rounded-3 overflow-hidden position-relative bg-dark" style="height: 160px;">
+                    <img
+                      id="modal-sol-img"
+                      src="/images/warehouse-management.jpg"
+                      alt="Solution Screen"
+                      class="w-100 h-100 object-cover"
+                    />
+                    <div class="position-absolute bottom-0 start-0 p-2 text-white text-xs font-mono bg-dark/60 w-100">
+                      <span id="modal-sol-img-label">Active Module</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Console Simulator Box -->
+            <div class="bg-slate-900 text-slate-100 p-4 rounded-3 font-mono border border-slate-800 shadow-lg">
+              <div class="d-flex justify-content-between align-items-center pb-2 border-bottom border-slate-800">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="d-inline-block rounded-circle bg-emerald-400" style="width: 10px; height: 10px;"></span>
+                  <span class="text-xs text-emerald-400 font-bold">
+                    EDGE SIMULATOR: <span id="sim-engine-name">WAREHOUSE</span>
+                  </span>
+                </div>
+                <span class="text-[11px] text-slate-400">Live Telemetry Feed</span>
+              </div>
+              <div class="py-3">
+                <div id="sim-feed" class="p-3 bg-black/60 rounded-2 text-xs space-y-1.5" style="min-height: 100px; max-height: 140px; overflow-y: auto;">
+                  <div class="text-cyan-300 font-semibold">[Connected] Ready for event trigger.</div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center pt-2 border-top border-slate-800">
+                <button
+                  id="sim-trigger-btn"
+                  type="button"
+                  class="btn-primary text-white btn-sm px-3 py-1.5 rounded-2 d-flex align-items-center gap-1.5 cursor-pointer"
+                >
+                  <span class="material-symbols-outlined fs-6">sensors</span>
+                  <span>Trigger Sensor Event</span>
+                </button>
+                <span class="text-[11px] text-slate-400">GS1 / EPC Compliant</span>
+              </div>
+            </div>
+
+            <!-- Key Enterprise Benefits -->
+            <div>
+              <h5 class="font-headline font-bold text-sm text-[#001945] mb-2">
+                Enterprise Capabilities &amp; Value
+              </h5>
+              <div id="modal-sol-benefits" class="row g-2"></div>
+            </div>
+
+            <!-- Technical Protocols -->
+            <div>
+              <h5 class="font-headline font-bold text-sm text-[#001945] mb-2">
+                Protocols &amp; Architecture
+              </h5>
+              <div id="modal-sol-specs" class="space-y-1.5"></div>
+            </div>
+
+            <!-- Metrics Preview -->
+            <div class="row g-3 pt-2">
+              <div class="col-6">
+                <div class="p-3 bg-white border border-slate-200 rounded-3 text-center">
+                  <div id="modal-metric-top-val" class="font-headline fs-5 font-bold text-[#001945]">3x Faster</div>
+                  <div id="modal-metric-top-lbl" class="text-xs text-slate-500">Picking Speed</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 bg-white border border-slate-200 rounded-3 text-center">
+                  <div id="modal-metric-bot-val" class="font-headline fs-5 font-bold text-[#001945]">Zero Stockout</div>
+                  <div id="modal-metric-bot-lbl" class="text-xs text-slate-500">Autonomous Restocking</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer bg-white border-top border-slate-200 px-4 py-3 d-flex justify-content-between">
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-sm px-3"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              data-open-demo="warehouse-management"
+              class="btn-primary text-white btn-sm px-4 py-2 rounded-2 font-bold cursor-pointer"
+            >
+              Request Solution Walkthrough
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOTSTRAP MODAL: REQUEST DEMO -->
+    <div
+      class="modal fade"
+      id="requestDemoModal"
+      tabindex="-1"
+      aria-labelledby="demoModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4 shadow-2xl bg-white overflow-hidden">
+          <div class="modal-header bg-[#f8f9fa] border-bottom border-slate-100 px-4 py-3">
+            <div>
+              <h5 id="demoModalTitle" class="modal-title font-headline font-bold text-base text-[#001945]">
+                Request Live Enterprise Demo
+              </h5>
+              <span class="text-xs text-slate-500">Consultation with Stallion Architects</span>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body p-4">
+            <form id="demo-form" class="space-y-3">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+                  Solution Focus
+                </label>
+                <select id="demo-solution-select" class="form-select text-sm py-2">
+                  <option value="warehouse-management">Warehouse Management</option>
+                  <option value="asset-management">Asset Management</option>
+                  <option value="track-and-trace">Track &amp; Trace</option>
+                  <option value="work-in-progress">Work-in-progress</option>
+                  <option value="file-management">File Management</option>
+                  <option value="retail-management">Retail Management</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Alex Morgan"
+                  class="form-control text-sm py-2"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Work Email</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="alex@company.com"
+                  class="form-control text-sm py-2"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Company</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Stallion Logistics"
+                  class="form-control text-sm py-2"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary w-100 text-white py-2.5 rounded-3 font-bold text-sm shadow-md mt-3 cursor-pointer"
+              >
+                Confirm Live Demo Reservation
+              </button>
+            </form>
+
+            <div id="demo-success" class="d-none py-6 text-center space-y-2">
+              <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
+                <span class="material-symbols-outlined fs-3">check_circle</span>
+              </div>
+              <h5 class="font-headline font-bold text-[#001945]">Demo Reserved</h5>
+              <p class="text-xs text-slate-500 max-w-xs mx-auto">
+                We have scheduled your session. A calendar invite has been sent to your work email.
+              </p>
+              <button
+                type="button"
+                class="btn btn-sm btn-secondary mt-2"
+                data-bs-dismiss="modal"
+              >
+                Done
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOTSTRAP MODAL: AUTH / SSO LOGIN -->
+    <div
+      class="modal fade"
+      id="authModal"
+      tabindex="-1"
+      aria-labelledby="authModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4 shadow-2xl bg-white overflow-hidden">
+          <div class="modal-header bg-[#f8f9fa] border-bottom border-slate-100 px-4 py-3">
+            <div class="d-flex align-items-center gap-2">
+              <img src="/images/logo.png" alt="Logo" class="h-5 w-auto" />
+              <h5 id="authModalTitle" class="modal-title font-headline font-bold text-sm text-[#003c90]">
+                Stallion Enterprise SSO
+              </h5>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body p-4">
+            <form id="auth-form" class="space-y-3">
+              <div>
+                <h6 class="font-headline font-bold text-base text-[#001945]">Client &amp; Partner Sign In</h6>
+                <p class="text-xs text-slate-400">Enter your authorized enterprise credentials</p>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Enterprise Email</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="admin@enterprise.com"
+                  class="form-control text-sm py-2"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Password / SSO Token</label>
+                <input
+                  type="password"
+                  required
+                  placeholder="••••••••••••"
+                  class="form-control text-sm py-2"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary w-100 text-white py-2.5 rounded-3 font-bold text-sm shadow-md mt-2 cursor-pointer"
+              >
+                Authorize &amp; Continue
+              </button>
+            </form>
+
+            <div id="auth-success" class="d-none py-6 text-center space-y-2">
+              <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
+                <span class="material-symbols-outlined fs-3">verified_user</span>
+              </div>
+              <h5 class="font-headline font-bold text-[#001945]">Access Granted</h5>
+              <p class="text-xs text-slate-500">
+                Zero-Trust SSO credential verified. Entering Stallion Software Hub...
+              </p>
+              <button
+                type="button"
+                class="btn btn-sm btn-primary mt-2"
+                data-bs-dismiss="modal"
+              >
+                Enter Console
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Vanilla JavaScript Controller (No TypeScript) -->
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>

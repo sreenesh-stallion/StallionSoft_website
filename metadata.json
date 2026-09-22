@@ -1,0 +1,6 @@
+{
+  "name": "Stallion OneByte - Digital Intelligence",
+  "description": "Enterprise software solutions for Asset Management, Warehouse Orchestration, Track & Trace, Work-in-Progress, File Management, and Retail POS Intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
