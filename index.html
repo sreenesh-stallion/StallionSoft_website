@@ -8,7 +8,7 @@
       name="description"
       content="Stallion OneByte - In-house software development division of Stallion Group driving industrial efficiency with RFID, Barcode, Warehouse, and Asset Management."
     />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,8 +35,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
-    <!-- Tailwind CSS Stylesheet -->
-    <link rel="stylesheet" href="/src/index.css" />
+    <!-- Tailwind CSS v4 Browser Compiler & Stylesheet -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="src/index.css" />
   </head>
   <body class="bg-[#f8f9fa] text-[#191c1d] min-h-screen flex flex-col">
     <!-- NAVIGATION BAR -->
@@ -45,7 +46,7 @@
         <!-- Brand Logo & Name -->
         <a href="#" class="flex items-center gap-2.5 text-decoration-none group">
           <img
-            src="/images/logo.png"
+            src="images/logo.png"
             alt="Stallion OneByte Logo"
             class="h-8 w-auto object-contain transition-transform group-hover:scale-105"
           />
@@ -147,13 +148,13 @@
         <!-- Background Mesh Texture (Downloaded Local Image) -->
         <div class="absolute inset-0 opacity-15 pointer-events-none mix-blend-multiply overflow-hidden">
           <img
-            src="/images/mesh-bg.png"
+            src="images/mesh-bg.png"
             alt="Mesh Pattern"
             class="w-full h-full object-cover scale-105"
           />
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-4 sm:pt-6 pb-5 sm:pb-6">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-4 sm:pt-6 pb-3 sm:pb-4">
 
           <!-- SLIDE 0: ASSET MANAGEMENT -->
           <div class="carousel-slide" data-slide="0">
@@ -206,7 +207,7 @@
               <div class="lg:col-span-5">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
                   <img
-                    src="/images/asset-management.jpg"
+                    src="images/asset-management.jpg"
                     alt="Asset Management Dashboard"
                     class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -283,7 +284,7 @@
               <div class="lg:col-span-5">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
                   <img
-                    src="/images/warehouse-management.jpg"
+                    src="images/warehouse-management.jpg"
                     alt="Warehouse Management Automation"
                     class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -360,7 +361,7 @@
               <div class="lg:col-span-5">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
                   <img
-                    src="/images/track-and-trace.jpg"
+                    src="images/track-and-trace.jpg"
                     alt="Track and Trace Worldwide"
                     class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -436,7 +437,7 @@
               <div class="lg:col-span-5">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
                   <img
-                    src="/images/work-in-progress.jpg"
+                    src="images/work-in-progress.jpg"
                     alt="Work in progress automation"
                     class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -512,7 +513,7 @@
               <div class="lg:col-span-5">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
                   <img
-                    src="/images/file-management.jpg"
+                    src="images/file-management.jpg"
                     alt="File management smart archives"
                     class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -588,7 +589,7 @@
               <div class="lg:col-span-5">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
                   <img
-                    src="/images/retail-management.jpg"
+                    src="images/retail-management.jpg"
                     alt="Retail Storefront POS"
                     class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -712,31 +713,27 @@
         </div>
       </section>
 
-      <!-- ABOUT SECTION -->
-      <section id="about-section" class="py-5 sm:py-6 bg-[#f8f9fa] border-b border-slate-200/60">
+      <!-- ABOUT & VISION/MISSION SECTION -->
+      <section id="about-section" class="pt-4 pb-6 sm:pt-5 sm:pb-7 bg-[#f8f9fa] border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div class="max-w-4xl mx-auto text-center space-y-2">
-            <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-[#001945] tracking-tight">
+          <div class="max-w-4xl mx-auto text-center mb-4 sm:mb-5">
+            <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-[#001945] tracking-tight mb-2">
               About Stallion OneByte
             </h2>
-            <p class="text-sm sm:text-base text-[#434653] leading-relaxed">
+            <p class="text-sm sm:text-base text-[#434653] leading-relaxed mb-0">
               Stallion OneByte is a division of Stallion Group, serving as an in-house software development center focused on driving industrial and enterprise efficiency. We specialize in providing innovative technology solutions that help businesses flourish, offering an entire range of IT services to conceptualize and realize digital initiatives.
             </p>
           </div>
-        </div>
-      </section>
 
-      <!-- OUR VISION & OUR MISSION BENTO CARDS -->
-      <section id="vision-mission" class="py-5 sm:py-6 bg-[#f3f4f5]/60 border-b border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div class="row g-3 sm:g-4">
+          <!-- Our Vision & Our Mission Bento Cards -->
+          <div id="vision-mission" class="row g-3 sm:g-4 pt-1">
             <!-- Our Vision -->
             <div class="col-12 col-md-6">
-              <div class="glass-panel p-5 sm:p-6 rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 h-100 border border-white/70">
-                <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#003c90] flex items-center justify-center mb-3 shadow-2xs">
-                  <span class="material-symbols-outlined fs-4">visibility</span>
+              <div class="glass-panel p-4 sm:p-5 rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 h-100 border border-white/70">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#003c90] flex items-center justify-center mb-2.5 shadow-2xs">
+                  <span class="material-symbols-outlined fs-5">visibility</span>
                 </div>
-                <h3 class="font-headline text-xl sm:text-2xl font-bold text-[#001945] mb-2">
+                <h3 class="font-headline text-lg sm:text-xl font-bold text-[#001945] mb-1.5">
                   Our Vision
                 </h3>
                 <p class="text-sm sm:text-base text-[#434653] leading-relaxed mb-0">
@@ -747,11 +744,11 @@
 
             <!-- Our Mission -->
             <div class="col-12 col-md-6">
-              <div class="glass-panel p-5 sm:p-6 rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 h-100 border border-white/70">
-                <div class="w-11 h-11 rounded-xl bg-cyan-50 text-[#004757] flex items-center justify-center mb-3 shadow-2xs">
-                  <span class="material-symbols-outlined fs-4">rocket_launch</span>
+              <div class="glass-panel p-4 sm:p-5 rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 h-100 border border-white/70">
+                <div class="w-10 h-10 rounded-xl bg-cyan-50 text-[#004757] flex items-center justify-center mb-2.5 shadow-2xs">
+                  <span class="material-symbols-outlined fs-5">rocket_launch</span>
                 </div>
-                <h3 class="font-headline text-xl sm:text-2xl font-bold text-[#001945] mb-2">
+                <h3 class="font-headline text-lg sm:text-xl font-bold text-[#001945] mb-1.5">
                   Our Mission
                 </h3>
                 <p class="text-sm sm:text-base text-[#434653] leading-relaxed mb-0">
@@ -785,7 +782,7 @@
               >
                 <div class="h-52 bg-slate-900 overflow-hidden relative">
                   <img
-                    src="/images/asset-management.jpg"
+                    src="images/asset-management.jpg"
                     alt="Asset Management"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -822,7 +819,7 @@
               >
                 <div class="h-52 bg-slate-900 overflow-hidden relative">
                   <img
-                    src="/images/warehouse-management.jpg"
+                    src="images/warehouse-management.jpg"
                     alt="Warehouse Management"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -859,7 +856,7 @@
               >
                 <div class="h-52 bg-slate-900 overflow-hidden relative">
                   <img
-                    src="/images/file-management.jpg"
+                    src="images/file-management.jpg"
                     alt="File Management"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -896,7 +893,7 @@
               >
                 <div class="h-52 bg-slate-900 overflow-hidden relative">
                   <img
-                    src="/images/work-in-progress.jpg"
+                    src="images/work-in-progress.jpg"
                     alt="Work in Progress"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -933,7 +930,7 @@
               >
                 <div class="h-52 bg-slate-900 overflow-hidden relative">
                   <img
-                    src="/images/retail-management.jpg"
+                    src="images/retail-management.jpg"
                     alt="Retail Management"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -970,7 +967,7 @@
               >
                 <div class="h-52 bg-slate-900 overflow-hidden relative">
                   <img
-                    src="/images/track-and-trace.jpg"
+                    src="images/track-and-trace.jpg"
                     alt="Track and Trace"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -1262,7 +1259,7 @@
                   <div class="rounded-3 overflow-hidden position-relative bg-dark" style="height: 160px;">
                     <img
                       id="modal-sol-img"
-                      src="/images/warehouse-management.jpg"
+                      src="images/warehouse-management.jpg"
                       alt="Solution Screen"
                       class="w-100 h-100 object-cover"
                     />
@@ -1468,7 +1465,7 @@
         <div class="modal-content border-0 rounded-4 shadow-2xl bg-white overflow-hidden">
           <div class="modal-header bg-[#f8f9fa] border-bottom border-slate-100 px-4 py-3">
             <div class="d-flex align-items-center gap-2">
-              <img src="/images/logo.png" alt="Logo" class="h-5 w-auto" />
+              <img src="images/logo.png" alt="Logo" class="h-5 w-auto" />
               <h5 id="authModalTitle" class="modal-title font-headline font-bold text-sm text-[#003c90]">
                 Stallion Enterprise SSO
               </h5>
@@ -1545,6 +1542,6 @@
     ></script>
 
     <!-- Vanilla JavaScript Controller (No TypeScript) -->
-    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="src/app.js"></script>
   </body>
 </html>

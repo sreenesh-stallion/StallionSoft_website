@@ -11,7 +11,7 @@ const SOLUTIONS_DATA = [
     tagline: 'Maintain records to monitor asset state and assignments',
     description:
       'Empower your enterprise to monitor, govern, and optimize tangible and intangible capital assets. Ensure continuous audit readiness and prevent downtime with automated RFID tracking.',
-    image: '/images/asset-management.jpg',
+    image: 'images/asset-management.jpg',
     label: 'Asset Mgmt',
     subtitle: 'Lifecycle & RFID',
     icon: 'inventory_2',
@@ -44,7 +44,7 @@ const SOLUTIONS_DATA = [
     tagline: 'Control storage, picking, dispatching, and bin-level movements instantly',
     description:
       'Control storage, picking, dispatching, and bin-level movements instantly. Seamlessly synchronize Barcode & high-speed RFID scanning for frictionless fulfillment.',
-    image: '/images/warehouse-management.jpg',
+    image: 'images/warehouse-management.jpg',
     label: 'Warehouse',
     subtitle: 'Storage & Picking',
     icon: 'warehouse',
@@ -77,7 +77,7 @@ const SOLUTIONS_DATA = [
     tagline: 'Determine current and past locations of products efficiently',
     description:
       'Determine past and live geographic milestones across international distribution corridors with high-precision IoT tracking, digital waybills, and geofencing.',
-    image: '/images/track-and-trace.jpg',
+    image: 'images/track-and-trace.jpg',
     label: 'Track & Trace',
     subtitle: 'Global Telemetry',
     icon: 'share_location',
@@ -110,7 +110,7 @@ const SOLUTIONS_DATA = [
     tagline: 'Manage unfinished items in a production process or supply chain with real-time traceability',
     description:
       'Track unfinished goods, assemblies, and subcomponents across multi-stage production lines with sub-second RFID and Barcode telemetry.',
-    image: '/images/work-in-progress.jpg',
+    image: 'images/work-in-progress.jpg',
     label: 'Work-in-progress',
     subtitle: 'Shopfloor Trace',
     icon: 'conveyor_belt',
@@ -143,7 +143,7 @@ const SOLUTIONS_DATA = [
     tagline: 'Track documents effectively and rapidly using Barcode technology',
     description:
       'Track sensitive corporate documentation, legal files, and archive movements rapidly using intelligent 2D Barcode and RFID check-in/check-out protocols.',
-    image: '/images/file-management.jpg',
+    image: 'images/file-management.jpg',
     label: 'File Mgmt',
     subtitle: 'Records & Audit',
     icon: 'folder_managed',
@@ -176,7 +176,7 @@ const SOLUTIONS_DATA = [
     tagline: 'Automate activities of retailers and wholesalers to make correct merchandising decisions',
     description:
       'Automate floor activities, inventory reconciliation, and wholesaler transactions. Make data-driven merchandising decisions backed by precise real-time checkout telemetry.',
-    image: '/images/retail-management.jpg',
+    image: 'images/retail-management.jpg',
     label: 'Retail Mgmt',
     subtitle: 'POS & Merchandising',
     icon: 'storefront',
