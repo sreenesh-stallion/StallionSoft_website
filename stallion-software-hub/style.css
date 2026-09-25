@@ -1,0 +1,21 @@
+/*
+Theme Name: Stallion Software Hub
+Theme URI: https://stallionindia.com/
+Author: Stallion Software Hub Team
+Author URI: https://stallionindia.com/
+Description: Custom WordPress theme converted from the Stallion Software Hub digital intelligence platform.
+Version: 1.0.0
+Text Domain: stallion-software-hub
+*/
+
+/* WordPress Core Alignment Styles */
+.alignwide {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.alignfull {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
