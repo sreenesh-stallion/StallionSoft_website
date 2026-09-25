@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dots = document.querySelectorAll('[data-dot]');
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
-  const heroSection = document.getElementById('hero-carousel');
+  const heroSection = document.getElementById('home') || document.getElementById('hero-carousel');
 
   function updateCarousel(index) {
     if (index < 0) currentSlideIndex = slides.length - 1;
@@ -304,6 +304,42 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroSection) {
     heroSection.addEventListener('mouseenter', stopAutoSlide);
     heroSection.addEventListener('mouseleave', startAutoSlide);
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    heroSection.addEventListener(
+      'touchstart',
+      (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      },
+      { passive: true }
+    );
+
+    heroSection.addEventListener(
+      'touchend',
+      (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        // Check if horizontal swipe was dominant and exceeded 45px
+        if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX < 0) {
+            // Swiped left -> next slide
+            updateCarousel(currentSlideIndex + 1);
+            startAutoSlide();
+          } else {
+            // Swiped right -> prev slide
+            updateCarousel(currentSlideIndex - 1);
+            startAutoSlide();
+          }
+        }
+      },
+      { passive: true }
+    );
   }
 
   // Initialize carousel on index 1

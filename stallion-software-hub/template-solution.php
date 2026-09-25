@@ -71,8 +71,8 @@ $data = isset($solutions[$slug]) ? $solutions[$slug] : $solutions['asset-managem
       </div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <div class="lg:col-span-7 space-y-5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-7 space-y-4 sm:space-y-5 order-2 lg:order-1 slide-text-col">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60">
               <span class="w-2 h-2 rounded-full bg-[#003c90] animate-pulse"></span>
               <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
@@ -119,13 +119,13 @@ $data = isset($solutions[$slug]) ? $solutions[$slug] : $solutions['asset-managem
             </div>
           </div>
 
-          <div class="lg:col-span-5">
+          <div class="lg:col-span-5 order-1 lg:order-2 slide-image-col">
             <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
               <img src="<?php echo esc_url($assets . '/images/' . $data['img']); ?>" alt="<?php the_title(); ?>"
-                class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500" />
+                class="w-full h-60 sm:h-72 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
 
-              <div class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+              <div class="absolute top-3 right-3 sm:top-4 sm:right-4 glass-panel p-2.5 sm:p-3 rounded-xl border border-white/60 shadow-lg animate-float">
                 <div class="flex items-center gap-2">
                   <span class="material-symbols-outlined text-cyan-600 fs-6">verified</span>
                   <span class="text-xs font-bold text-[#001945]"><?php echo esc_html($data['m1_val']); ?></span>
@@ -133,7 +133,7 @@ $data = isset($solutions[$slug]) ? $solutions[$slug] : $solutions['asset-managem
                 <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5"><?php echo esc_html($data['m1_lbl']); ?></span>
               </div>
 
-              <div class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+              <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 glass-panel p-2.5 sm:p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
                 <div class="flex items-center gap-2">
                   <span class="material-symbols-outlined text-emerald-600 fs-6">trending_up</span>
                   <span class="text-xs font-bold text-[#001945]"><?php echo esc_html($data['m2_val']); ?></span>
@@ -141,7 +141,7 @@ $data = isset($solutions[$slug]) ? $solutions[$slug] : $solutions['asset-managem
                 <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5"><?php echo esc_html($data['m2_lbl']); ?></span>
               </div>
 
-              <div class="absolute bottom-4 right-4 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] text-cyan-300 font-mono-tech border border-cyan-500/30 flex items-center gap-1.5">
+              <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] text-cyan-300 font-mono-tech border border-cyan-500/30 flex items-center gap-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
                 <span><?php echo esc_html($data['live_tag']); ?></span>
               </div>

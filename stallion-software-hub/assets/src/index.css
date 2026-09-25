@@ -87,6 +87,25 @@ h6,
   opacity: 1;
 }
 
+/* Mobile First Slide Ordering: Image on Top, Content Below */
+@media (max-width: 1023px) {
+  .slide-text-col {
+    order: 2 !important;
+  }
+  .slide-image-col {
+    order: 1 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide-text-col {
+    order: 1 !important;
+  }
+  .slide-image-col {
+    order: 2 !important;
+  }
+}
+
 /* Nav Pills Active States */
 .nav-pill {
   transition: all 0.25s ease;

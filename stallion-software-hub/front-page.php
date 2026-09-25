@@ -15,9 +15,10 @@ $assets = get_template_directory_uri() . '/assets';
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-4 sm:pt-6 pb-3 sm:pb-4">
         <!-- SLIDE 0: ASSET MANAGEMENT -->
+        <!-- SLIDE 0: ASSET MANAGEMENT -->
         <div class="carousel-slide" data-slide="0">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div class="lg:col-span-7 space-y-5">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-7 space-y-4 sm:space-y-5 order-2 lg:order-1 slide-text-col">
               <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
                 Enterprise Asset Intelligence
               </span>
@@ -57,19 +58,19 @@ $assets = get_template_directory_uri() . '/assets';
                 </button>
               </div>
             </div>
-            <div class="lg:col-span-5">
+            <div class="lg:col-span-5 order-1 lg:order-2 slide-image-col">
               <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
                 <img src="<?php echo esc_url($assets); ?>/images/asset-management.jpg" alt="Asset Management Dashboard"
-                  class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  class="w-full h-60 sm:h-72 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
-                <div class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+                <div class="absolute top-3 right-3 sm:top-4 sm:right-4 glass-panel p-2.5 sm:p-3 rounded-xl border border-white/60 shadow-lg animate-float">
                   <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-cyan-600 fs-6">verified</span>
                     <span class="text-xs font-bold text-[#001945]">99.8% Accuracy</span>
                   </div>
                   <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Real-Time Audit Sync</span>
                 </div>
-                <div class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+                <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 glass-panel p-2.5 sm:p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
                   <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-emerald-600 fs-6">trending_up</span>
                     <span class="text-xs font-bold text-[#001945]">-38% Loss Rate</span>
@@ -83,8 +84,8 @@ $assets = get_template_directory_uri() . '/assets';
 
         <!-- SLIDE 1: WAREHOUSE MANAGEMENT (ACTIVE) -->
         <div class="carousel-slide active" data-slide="1">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div class="lg:col-span-7 space-y-5">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-7 space-y-4 sm:space-y-5 order-2 lg:order-1 slide-text-col">
               <span class="text-xs font-bold uppercase tracking-wider text-[#003c90] font-mono-tech">
                 Intelligent Logistics &amp; Supply Chain
               </span>
@@ -124,19 +125,19 @@ $assets = get_template_directory_uri() . '/assets';
                 </button>
               </div>
             </div>
-            <div class="lg:col-span-5">
+            <div class="lg:col-span-5 order-1 lg:order-2 slide-image-col">
               <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 group">
                 <img src="<?php echo esc_url($assets); ?>/images/warehouse-management.jpg" alt="Warehouse Management Automation"
-                  class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  class="w-full h-60 sm:h-72 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
-                <div class="absolute top-4 right-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float">
+                <div class="absolute top-3 right-3 sm:top-4 sm:right-4 glass-panel p-2.5 sm:p-3 rounded-xl border border-white/60 shadow-lg animate-float">
                   <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-cyan-600 fs-6">bolt</span>
                     <span class="text-xs font-bold text-[#001945]">3x Faster Picking</span>
                   </div>
                   <span class="text-[10px] text-slate-500 font-mono-tech block mt-0.5">Guided Path Routing</span>
                 </div>
-                <div class="absolute bottom-4 left-4 glass-panel p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
+                <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 glass-panel p-2.5 sm:p-3 rounded-xl border border-white/60 shadow-lg animate-float-delayed">
                   <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-emerald-600 fs-6">inventory</span>
                     <span class="text-xs font-bold text-[#001945]">Zero Stockout</span>
